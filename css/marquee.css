@@ -1,0 +1,41 @@
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+    left: 5%;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    left: 0;
+  }
+}
+
+.marqueeBackground {
+  padding: 2px;
+  width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.marquee {
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  animation: marquee-scroll 100s infinite linear;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.companySpan {
+  font-size: 10pt;
+  display: none;
+}
+
+.marquee-span {
+  display: inline-block;
+  margin: 10px;
+}

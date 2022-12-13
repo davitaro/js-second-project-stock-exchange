@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Exchange</title>
+    <link rel="icon" type="image/x-icon" href="../images/suit-icon-14.jpg">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2020.css">
+    <link href="../css/marquee.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+        integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+        crossorigin="anonymous">
+        </script>
+    <script src="https://kit.fontawesome.com/fa9c85ad15.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="w3-2020-lark">
+    <div class="marqueeBackground w3-white" id="marqueeBackground">
+        <div class="marquee w3-white w3-text-black" id="marqueeDiv"></div>
+    </div>
+    <header class="extra-padding w3-2020-navy-blazer flexRow flexRowHeader media-search">
+        <h1 class="w3-center inline margin-bottom"> Stock Exchange </h1>
+        <div class="form" id="searchFormContainer"></div>
+    </header>
+    <div class="wrapper">
+        <div id="backgroundText">
+            <div class="w3-container w3-center welcome" id="welcome"> Welcome.</div>
+            <h1 class="w3-text-black subtitle w3-center" id="subtitle">Type into the search bar above to begin.</h1>
+            <div class="w3-center" id="suitContainer"> <i class="fas fa-user-tie suit fa-10x "></i></div>
+        </div>
+        <div class="loader displaynone" id="loader"></div>
+        <div>
+            <div id="resultsContainer" class="w3-white"></div>
+            <div id="errorContainer"></div>
+        </div>
+    </div>
+    <script src="../js/grabs.js"></script>
+    <script src="../js/marquee.js"></script>
+    <script src="../js/searchresults.js"></script>
+    <script src="../js/searchform.js"></script>
+    <script>
+        (async function () {
+            const stockMarquee = new Marquee(marqueeDiv);
+            stockMarquee.getMarqueeInfo();
+            let searchForm = new SearchForm(searchFormContainer);
+            let searchResults = new SearchResults("resultsContainer");
+            searchForm.onSearch((array1, array2) => {
+                searchResults.handleResults(array1, array2);
+            });
+        })()
+    </script>
+</body>
+
+</html>

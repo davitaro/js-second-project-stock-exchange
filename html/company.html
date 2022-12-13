@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Company Information</title>
+    <link rel="icon" type="image/x-icon" href="../images/suit-icon-14.jpg">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2020.css">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body class="w3-2020-lark">
+    <header
+        class="w3-container w3-white  bottom-border flexRow flexRowHeader full-page-width company-header no-bottom-margin extra-padding">
+        <img src="../images/searchicon.png" title="logo" alt="logo" class="logo side-margins" id="logo"></img>
+        <h1 id="companyName" class="side-margins">Loading...</h1>
+    </header>
+    <main class="padding-left padding-right full-page-width">
+        <div class="loader displaynone" id="loader"></div>
+
+        <div class="margin-top  margin-bottom results-cards extra-padding media-column">
+            <div class="flexColumn side-margins media-no-side-margins">
+                <div class=" media-small-cards flexRow flexRowCards margin-bottom full-page-width">
+                    <div class="w3-card w3-white small-card margin-right media-no-side-margins">
+                        <h1 class="w3-card w3-2020-navy-blazer padding w3-center">Stock Price</h1>
+                        <h2 id="price" class="extra-padding w3-center"></h2>
+                    </div>
+                    <div class="w3-card small-card w3-white">
+                        <h1 class="w3-card w3-2020-navy-blazer padding w3-center">Website</h1>
+                        <a id="website" class="extra-padding block w3-text-blue medium-font w3-center adjLineHei"
+                            target="_blank"></a>
+                    </div>
+                </div>
+                <div class="w3-card large-card full-page-width media-chart w3-white">
+                    <h1 class="w3-card w3-2020-navy-blazer padding w3-center">Stock History</h1>
+                    <div class="loader displaynone" id="chartLoader"></div>
+                    <canvas id="myChart" width="200" height="200" class="extra-padding"></canvas>
+                </div>
+            </div>
+
+            <div class="w3-card large-card w3-white">
+                <h1 class="w3-card w3-2020-navy-blazer padding w3-center">Company Description</h1>
+                <div id="description" class="extra-padding"></div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/company.js"></script>
+</body>
+
+</html>
